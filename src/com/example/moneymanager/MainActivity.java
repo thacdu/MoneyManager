@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.GridView;
 
 public class MainActivity extends Activity {
 
@@ -13,14 +15,20 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button next = (Button) findViewById(R.id.add_bill);
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                Intent myIntent = new Intent(view.getContext(), ListFruitActivity.class);
-                startActivityForResult(myIntent, 0);
-            }
+        
+        GridView gridView = (GridView) findViewById(R.id.gridview);
+        gridView.setAdapter(new ImageAdapter(this));
+        gridView.setOnItemClickListener(new OnItemClickListener()
+        {
+     	   public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+     	   {
+     		   if(position == 0){
+     			   Intent myIntent = new Intent(getApplicationContext(), ListFruitActivity.class);
+     			   startActivityForResult(myIntent, 0);
+     		   }
+     	   }
         });
-    }
+    } 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

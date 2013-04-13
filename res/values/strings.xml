@@ -11,5 +11,6 @@
     <string name="view_bill">Xem hóa đơn</string>
     <string name="statistic">Xem thống kê</string>
     <string name="setting">Thiết lập</string>
+    <color name="main_background">#ffffff</color>
 
 </resources>

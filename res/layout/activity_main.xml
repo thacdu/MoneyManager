@@ -1,36 +1,11 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context=".MainActivity" >
-
-    <Button
-        android:id="@+id/add_bill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:text="@string/add_bill" />
-
-    <Button
-        android:id="@+id/view_bill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:text="@string/view_bill" />
-
-    <Button
-        android:id="@+id/button_statistic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="34dp"
-        android:text="@string/statistic" />
-
-    <Button
-        android:id="@+id/button_setting"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:text="@string/setting" />
-
-</GridLayout>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/gridview"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:columnWidth="150dp"
+	android:numColumns="auto_fit"
+	android:verticalSpacing="10dp"
+	android:horizontalSpacing="10dp"
+	android:stretchMode="columnWidth"
+	android:gravity="center"
+/>
