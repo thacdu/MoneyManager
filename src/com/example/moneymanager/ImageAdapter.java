@@ -41,7 +41,7 @@ public class ImageAdapter extends BaseAdapter {
 			textView.setText(textsIds[position]);
 			
 			imageButton = (ImageButton)view.findViewById(R.id.icon_image);
-			imageButton.setPadding(8, 8, 8, 8);
+			//imageButton.setPadding(8, 8, 8, 8);
 			imageButton.setImageResource(thumbIds[position]);
 			imageButton.setOnClickListener(new OnClickListener() {
 
@@ -60,16 +60,16 @@ public class ImageAdapter extends BaseAdapter {
 
 	// references to our images
 	private Integer[] thumbIds = {
-			R.drawable.plus, R.drawable.expand,
-			R.drawable.plus, R.drawable.expand,
-			R.drawable.plus, R.drawable.expand
+			R.drawable.add_sell_bill, R.drawable.setting,
+			R.drawable.add_buy_bill, R.drawable.setting,
+			R.drawable.statistic, R.drawable.setting
 	};
 	
 	// references to our texts
 	private String[] textsIds = {
-			"plus", "expand",
-			"plus", "expand",
-			"plus", "expand"
+			"Thêm hóa đơn bán", "Xem hóa đơn bán",
+			"Thêm hóa đơn nhập", "Xem hóa đơn nhập",
+			"Thống kê", "Thiết lập"
 	};
 	
 	private Class[] classlist = {
