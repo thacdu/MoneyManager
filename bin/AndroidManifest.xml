@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.bill.control.ListFruitActivity"></activity>
+        <activity android:name="com.bill.control.AddSellBill"></activity>
     </application>
 
 </manifest>

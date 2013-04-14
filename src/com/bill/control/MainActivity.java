@@ -25,7 +25,7 @@ public class MainActivity extends Activity {
      	   public void onItemClick(AdapterView<?> parent, View view, int position, long id)
      	   {
      		   if(position == 0){
-     			   Intent myIntent = new Intent(getApplicationContext(), ListFruitActivity.class);
+     			   Intent myIntent = new Intent(getApplicationContext(), AddSellBill.class);
      			   startActivityForResult(myIntent, 0);
      		   }
      	   }
