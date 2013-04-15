@@ -48,12 +48,12 @@ public final class R {
 		public static final int ActionBar_title = 0;
 	}
 	public static final class drawable {
-		public static final int actionbar_back_indicator = 0x7f020000;
-		public static final int icon = 0x7f02000d;
-		public static final int actionbar_btn_pressed = 0x7f020004;
-		public static final int actionbar_btn_normal = 0x7f020003;
-		public static final int actionbar_btn = 0x7f020002;
-		public static final int actionbar_background = 0x7f020001;
+		public static final int actionbar_back_indicator = 0x7f020001;
+		public static final int icon = 0x7f02000f;
+		public static final int actionbar_btn_pressed = 0x7f020005;
+		public static final int actionbar_btn_normal = 0x7f020004;
+		public static final int actionbar_btn = 0x7f020003;
+		public static final int actionbar_background = 0x7f020002;
 	}
 	public static final class attr {
 		public static final int title = 0x7f010000;

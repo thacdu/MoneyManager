@@ -1,7 +1,6 @@
 package com.bill.control;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -25,23 +24,14 @@ public class MainActivity extends Activity {
         final ActionBar actionBar = (ActionBar) findViewById(R.id.actionbar);
         //actionBar.setHomeAction(new IntentAction(this, createIntent(this), R.drawable.ic_title_home_demo));
 
-        final Action shareAction = new IntentAction(this, createShareIntent(), R.drawable.ic_title_share_default);
+        final Action shareAction = new IntentAction(this, ActionBarControl.createShareIntent(), R.drawable.ic_title_share_default);
         actionBar.addAction(shareAction);
         final Action otherAction = new IntentAction(this, new Intent(this, AddSellBill.class), R.drawable.ic_title_export_default);
         actionBar.addAction(otherAction);
         
         GridView gridView = (GridView) findViewById(R.id.gridview);
         gridView.setAdapter(new ImageAdapter(this));
-        gridView.setOnItemClickListener(new OnItemClickListener()
-        {
-     	   public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-     	   {
-     		   if(position == 0){
-     			   Intent myIntent = new Intent(getApplicationContext(), AddSellBill.class);
-     			   startActivityForResult(myIntent, 0);
-     		   }
-     	   }
-        });
+        
     } 
 
     @Override
@@ -49,18 +39,5 @@ public class MainActivity extends Activity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
-    }
-    
-    public static Intent createIntent(Context context) {
-        Intent i = new Intent(context, MainActivity.class);
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        return i;
-    }
-
-    private Intent createShareIntent() {
-        final Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.putExtra(Intent.EXTRA_TEXT, "Shared from the ActionBar widget.");
-        return Intent.createChooser(intent, "Share");
     }
 }

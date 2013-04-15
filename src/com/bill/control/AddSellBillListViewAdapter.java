@@ -35,7 +35,7 @@ public class AddSellBillListViewAdapter extends ArrayAdapter<String>{
 		nameView.setText(name[position]);
 		numberView.setText("Số lượng : " + number[position]);
 		priceView.setText(price[position]);
-
+		
 		return rowView;
 	}
 }

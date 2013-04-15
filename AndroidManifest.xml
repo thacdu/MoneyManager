@@ -26,6 +26,9 @@
         <activity android:name="com.bill.control.AddSellBill"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
+        <activity android:name="com.bill.control.SaveActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
     </application>
     
 	<uses-permission android:name="android.permission.INTERNET" />
