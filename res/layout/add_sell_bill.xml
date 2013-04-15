@@ -1,64 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="100dip"
-    android:orientation="horizontal"
-    android:clickable="false"
-    android:padding="5dip" >
- 
-    <!--  ListRow Left sied Thumbnail image --> 
-    <LinearLayout android:id="@+id/thumbnail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="10dip"
-        android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginRight="5dip">
- 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:src="@drawable/item"/>
- 
-    </LinearLayout>
- 	
-    <!-- Name of item -->
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/thumbnail"
-        android:layout_alignTop="@id/thumbnail"
-        android:paddingTop="10dip"
-        android:text="Bakery"
-        android:textColor="#040404"
-        android:typeface="sans"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
- 	
-    <TextView
-        android:id="@+id/number"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#343434"
-        android:textSize="20sp"
-   		android:paddingBottom="10dip"
-        android:layout_toRightOf="@id/thumbnail"
-        android:layout_alignBottom="@id/thumbnail"
-        android:layout_centerVertical="true"
-        android:text="3" />	
-     
-    <TextView
-        android:id="@+id/price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:text="10000"
-        android:textSize="30sp"
-        android:textColor="#10bcc9"
-        android:textStyle="bold"/>
- 
-</RelativeLayout>
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res/com.example.moneymanager">
+	<com.markupartist.android.widget.ActionBar
+	        android:id="@+id/actionbar"
+	        app:title="@string/app_name"
+	        style="@style/ActionBar"
+	        />
+	<ListView 
+	    android:id="@+id/listview"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center" />
+</LinearLayout>

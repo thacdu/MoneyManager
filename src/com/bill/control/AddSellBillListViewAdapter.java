@@ -16,7 +16,7 @@ public class AddSellBillListViewAdapter extends ArrayAdapter<String>{
 	private final String[] price;
  
 	public AddSellBillListViewAdapter(Context context, String[] name, String[] number, String[] price) {
-		super(context, R.layout.add_sell_bill, name);
+		super(context, R.layout.list_bill, name);
 		this.context = context;
 		this.name = name;
 		this.number = number;
@@ -28,7 +28,7 @@ public class AddSellBillListViewAdapter extends ArrayAdapter<String>{
 		LayoutInflater inflater = (LayoutInflater) context
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
  
-		View rowView = inflater.inflate(R.layout.add_sell_bill, parent, false);
+		View rowView = inflater.inflate(R.layout.list_bill, parent, false);
 		TextView nameView = (TextView) rowView.findViewById(R.id.name);
 		TextView numberView = (TextView) rowView.findViewById(R.id.number);
 		TextView priceView = (TextView) rowView.findViewById(R.id.price);

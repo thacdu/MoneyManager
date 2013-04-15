@@ -17,11 +17,7 @@ public class AddSellBill extends ListActivity{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-  
-		// no more this
-		// setContentView(R.layout.list_fruit);
-		 
-		setListAdapter(new AddSellBillListViewAdapter(this, NAME, NUMBER, PRICE));	    
+		setListAdapter(new AddSellBillListViewAdapter(this, NAME, NUMBER, PRICE));
 	}
 	
 	@Override
@@ -30,13 +26,5 @@ public class AddSellBill extends ListActivity{
 		int n = Integer.parseInt(NUMBER[position]);
 		NUMBER[position] = String.valueOf(n+1);
 		setListAdapter(new AddSellBillListViewAdapter(this, NAME, NUMBER, PRICE));
-		/*get selected items
-		String selectedValue = (String) getListAdapter().getItem(position);
-		Toast.makeText(this, selectedValue, Toast.LENGTH_SHORT).show();*/
- 
-	}
-	
-	private void loadMenu(){
-		
 	}
 }

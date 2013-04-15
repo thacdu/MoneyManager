@@ -12,5 +12,5 @@
     <string name="statistic">Xem thống kê</string>
     <string name="setting">Thiết lập</string>
     <color name="main_background">#ffffff</color>
-
+    <string name="save">Lưu</string>
 </resources>
