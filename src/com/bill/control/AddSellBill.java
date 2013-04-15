@@ -71,7 +71,7 @@ public class AddSellBill extends Activity{
 	
 	public void saveAction(){
 		onBackPressed();
-		
+		startActivity(new Intent(this, ViewSellBillActivity.class));
 	}
 }
 
