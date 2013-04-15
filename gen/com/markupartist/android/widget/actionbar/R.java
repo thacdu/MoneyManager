@@ -8,36 +8,36 @@ package com.markupartist.android.widget.actionbar;
 
 public final class R {
 	public static final class id {
-		public static final int screen = 0x7f090000;
-		public static final int actionbar_title = 0x7f090008;
-		public static final int actionbar_actions = 0x7f090006;
-		public static final int actionbar_home_btn = 0x7f090004;
-		public static final int actionbar_progress = 0x7f090007;
-		public static final int actionbar_home_bg = 0x7f090003;
-		public static final int actionbar_home_is_back = 0x7f090005;
-		public static final int actionbar_home_logo = 0x7f090002;
-		public static final int actionbar_home = 0x7f090001;
-		public static final int actionbar_item = 0x7f090009;
+		public static final int screen = 0x7f0a0000;
+		public static final int actionbar_title = 0x7f0a0008;
+		public static final int actionbar_actions = 0x7f0a0006;
+		public static final int actionbar_home_btn = 0x7f0a0004;
+		public static final int actionbar_progress = 0x7f0a0007;
+		public static final int actionbar_home_bg = 0x7f0a0003;
+		public static final int actionbar_home_is_back = 0x7f0a0005;
+		public static final int actionbar_home_logo = 0x7f0a0002;
+		public static final int actionbar_home = 0x7f0a0001;
+		public static final int actionbar_item = 0x7f0a0009;
 	}
 	public static final class style {
-		public static final int ActionBar = 0x7f070000;
-		public static final int ActionBarHomeLogo = 0x7f070003;
-		public static final int ActionBarItem = 0x7f070001;
-		public static final int ActionBarProgressBar = 0x7f070004;
-		public static final int ActionBarHomeItem = 0x7f070002;
+		public static final int ActionBar = 0x7f080000;
+		public static final int ActionBarHomeLogo = 0x7f080003;
+		public static final int ActionBarItem = 0x7f080001;
+		public static final int ActionBarProgressBar = 0x7f080004;
+		public static final int ActionBarHomeItem = 0x7f080002;
 	}
 	public static final class color {
-		public static final int actionbar_title = 0x7f040001;
-		public static final int actionbar_background_item_pressed_end = 0x7f040005;
-		public static final int actionbar_background_item_pressed_start = 0x7f040004;
-		public static final int actionbar_background_start = 0x7f040002;
-		public static final int actionbar_separator = 0x7f040000;
-		public static final int actionbar_background_end = 0x7f040003;
+		public static final int actionbar_title = 0x7f050001;
+		public static final int actionbar_background_item_pressed_end = 0x7f050005;
+		public static final int actionbar_background_item_pressed_start = 0x7f050004;
+		public static final int actionbar_background_start = 0x7f050002;
+		public static final int actionbar_separator = 0x7f050000;
+		public static final int actionbar_background_end = 0x7f050003;
 	}
 	public static final class string {
-		public static final int hello = 0x7f060000;
-		public static final int actionbar_activity_not_found = 0x7f060002;
-		public static final int app_name = 0x7f060001;
+		public static final int hello = 0x7f070000;
+		public static final int actionbar_activity_not_found = 0x7f070002;
+		public static final int app_name = 0x7f070001;
 	}
 	public static final class layout {
 		public static final int actionbar = 0x7f030000;
@@ -59,8 +59,8 @@ public final class R {
 		public static final int title = 0x7f010000;
 	}
 	public static final class dimen {
-		public static final int actionbar_item_width = 0x7f050002;
-		public static final int actionbar_height = 0x7f050000;
-		public static final int actionbar_item_height = 0x7f050001;
+		public static final int actionbar_item_width = 0x7f060002;
+		public static final int actionbar_height = 0x7f060000;
+		public static final int actionbar_item_height = 0x7f060001;
 	}
 }
