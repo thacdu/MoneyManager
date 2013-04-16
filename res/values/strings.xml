@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MoneyManager</string>
+    <string name="menu_settings">Setting</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="edit">Edit</string>
+    <string name="send">Send</string>
+    <string name="add_bill">Tạo hóa đơn</string>
+    <string name="button_ok">Đồng ý</string>
+    <string name="view_bill">Xem hóa đơn</string>
+    <string name="statistic">Xem thống kê</string>
+    <string name="setting">Thiết lập</string>
+    <color name="main_background">#ffffff</color>
+    <string name="save">Lưu</string>
+    <string name="table_number">Số bàn</string>
+</resources>
