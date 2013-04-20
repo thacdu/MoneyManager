@@ -1,6 +1,7 @@
 package com.bill.control;
      
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 import android.content.Intent;
@@ -79,27 +80,31 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper>{
 	
 	public void saveAction(){
 		int n = listview.getChildCount();
+		Bill bill;
+		ArrayList<Item> item = new ArrayList<Item>();
+		
 		try{
 			Dao<Bill, Integer> billDao = getHelper().getBillDao();
 			Dao<Item, Integer> itemDao = getHelper().getItemDao();
 			
 			EditText tableNumber = (EditText) findViewById(id.tableNumber);
 
-			Bill bill = new Bill(tableNumber.getText().toString().toString(), new Date(System.currentTimeMillis()));
+			bill = new Bill(tableNumber.getText().toString().toString(), new Date(System.currentTimeMillis()));
 			billDao.create(bill);
 			
 			for(int i = 0; i < n; i++){
 				View currentView = listview.getChildAt(i);
 				TextView number = (TextView) currentView.findViewById(id.number);
-				if(number.getText() != "0"){
+				if(! number.getText().equals("Số lượng : 0")){
 					TextView price = (TextView) currentView.findViewById(id.price);
 					TextView name = (TextView) currentView.findViewById(id.name);
 					String nameString = name.getText().toString().toString();
 					String priceString = price.getText().toString().toString();
 					String numberString = number.getText().toString().toString();
 					numberString = numberString.substring(11, numberString.length());
-					Item item = new Item(nameString, priceString, numberString, bill);
-					itemDao.create(item);
+					Item currentItem = new Item(nameString, priceString, numberString, bill);
+					itemDao.create(currentItem);
+					item.add(currentItem);
 				}
 			}
 		}catch(SQLException e){
@@ -107,6 +112,7 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper>{
 		}
 		
 		onBackPressed();
+		ViewSellBillActivity.setObject(bill, item);
 		startActivity(new Intent(this, ViewSellBillActivity.class));
 	}
 }

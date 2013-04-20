@@ -13,7 +13,7 @@ public class Item {
 	private String name;
 	
 	@DatabaseField
-	private double price;
+	private int price;
 	
 	@DatabaseField
 	private int number;
@@ -25,7 +25,7 @@ public class Item {
 		
 	}
 	
-	public Item(String name, double price, int number, Bill bill){
+	public Item(String name, int price, int number, Bill bill){
 		this.name = name;
 		this.price = price;
 		this.number = number;
@@ -34,7 +34,7 @@ public class Item {
 	
 	public Item(String name, String price, String number, Bill bill){
 		this.name = name;
-		this.price = Double.parseDouble(price);
+		this.price = Integer.parseInt(price);
 		this.number = Integer.parseInt(number);
 		this.bill = bill;
 	}
@@ -47,6 +47,14 @@ public class Item {
 		return name;
 	}
 	
+	public String getPriceString(){
+		return String.valueOf(price);
+	}
+	
+	public String getNumberString(){
+		return String.valueOf(number);
+	}
+	
 	public void increaseNumber(){
 		number++;
 	}
@@ -55,7 +63,7 @@ public class Item {
 		number--;
 	}
 	
-	public double getPriceInBill(){
+	public int getPriceInBill(){
 		return price * number;
 	}
 	

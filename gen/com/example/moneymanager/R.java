@@ -72,17 +72,18 @@ containing a value of this type.
         public static final int gridview=0x7f0a000b;
         public static final int icon_image=0x7f0a000f;
         public static final int icon_text=0x7f0a0010;
-        public static final int id1=0x7f0a0017;
         public static final int image=0x7f0a0013;
         public static final int listitem=0x7f0a0011;
         public static final int listview=0x7f0a000d;
-        public static final int menu_settings=0x7f0a0018;
+        public static final int menu_settings=0x7f0a0019;
         public static final int name=0x7f0a0014;
         public static final int number=0x7f0a0015;
         public static final int price=0x7f0a0016;
         public static final int screen=0x7f0a0000;
+        public static final int table=0x7f0a0017;
         public static final int tableNumber=0x7f0a000c;
         public static final int thumbnail=0x7f0a0012;
+        public static final int total_price=0x7f0a0018;
     }
     public static final class layout {
         public static final int actionbar=0x7f030000;
