@@ -8,16 +8,16 @@ package com.markupartist.android.widget.actionbar;
 
 public final class R {
 	public static final class id {
-		public static final int screen = 0x7f0a0000;
-		public static final int actionbar_title = 0x7f0a0008;
-		public static final int actionbar_actions = 0x7f0a0006;
-		public static final int actionbar_home_btn = 0x7f0a0004;
-		public static final int actionbar_progress = 0x7f0a0007;
-		public static final int actionbar_home_bg = 0x7f0a0003;
-		public static final int actionbar_home_is_back = 0x7f0a0005;
-		public static final int actionbar_home_logo = 0x7f0a0002;
-		public static final int actionbar_home = 0x7f0a0001;
-		public static final int actionbar_item = 0x7f0a0009;
+		public static final int screen = 0x7f0b0000;
+		public static final int actionbar_title = 0x7f0b0008;
+		public static final int actionbar_actions = 0x7f0b0006;
+		public static final int actionbar_home_btn = 0x7f0b0004;
+		public static final int actionbar_progress = 0x7f0b0007;
+		public static final int actionbar_home_bg = 0x7f0b0003;
+		public static final int actionbar_home_is_back = 0x7f0b0005;
+		public static final int actionbar_home_logo = 0x7f0b0002;
+		public static final int actionbar_home = 0x7f0b0001;
+		public static final int actionbar_item = 0x7f0b0009;
 	}
 	public static final class style {
 		public static final int ActionBar = 0x7f080000;
@@ -49,7 +49,7 @@ public final class R {
 	}
 	public static final class drawable {
 		public static final int actionbar_back_indicator = 0x7f020001;
-		public static final int icon = 0x7f02000f;
+		public static final int icon = 0x7f020011;
 		public static final int actionbar_btn_pressed = 0x7f020005;
 		public static final int actionbar_btn_normal = 0x7f020004;
 		public static final int actionbar_btn = 0x7f020003;

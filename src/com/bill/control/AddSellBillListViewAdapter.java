@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.moneymanager.R;
@@ -27,7 +28,7 @@ public class AddSellBillListViewAdapter extends ArrayAdapter<String>{
 	public View getView(int position, View convertView, ViewGroup parent) {
 		LayoutInflater inflater = (LayoutInflater) context
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
- 
+		SwipeInterface activity = (SwipeInterface) context;
 		View rowView = inflater.inflate(R.layout.list_bill, parent, false);
 		TextView nameView = (TextView) rowView.findViewById(R.id.name);
 		TextView numberView = (TextView) rowView.findViewById(R.id.number);
@@ -35,6 +36,10 @@ public class AddSellBillListViewAdapter extends ArrayAdapter<String>{
 		nameView.setText(name[position]);
 		numberView.setText("Số lượng : " + number[position]);
 		priceView.setText(price[position]);
+		
+		RelativeLayout layout = (RelativeLayout) rowView.findViewById(R.id.listitem);
+		ActivitySwipeDetector activitySwipeDetector = new ActivitySwipeDetector(activity, position);
+		layout.setOnTouchListener(activitySwipeDetector);
 		
 		return rowView;
 	}

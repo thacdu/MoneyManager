@@ -36,7 +36,8 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity android:name="com.bill.control.SettingActivity"
-            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+            android:label="@string/setting"
+            android:theme="@android:style/Theme.Holo.Light" >
         </activity>
     </application>
     

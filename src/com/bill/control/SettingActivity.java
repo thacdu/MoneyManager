@@ -1,19 +1,20 @@
 package com.bill.control;
 
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
 
-import com.bill.data.DatabaseHelper;
 import com.example.moneymanager.R;
-import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 
-public class SettingActivity extends OrmLiteBaseActivity<DatabaseHelper>{
+public class SettingActivity extends PreferenceActivity{
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.setting);
-		
-		ActivitySwipeDetector activitySwipeDetector = new ActivitySwipeDetector(this);
-		LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
-		layout.setOnTouchListener(activitySwipeDetector);
+		addPreferencesFromResource(R.layout.setting);
+		setIcon();
+	}
+	
+	private void setIcon(){
+		Preference itemAdd = (Preference) findPreference("item_add");
+		itemAdd.setIcon(R.drawable.btn_add);
 	}
 }

@@ -6,12 +6,26 @@
     <string name="hello_world">Hello world!</string>
     <string name="edit">Edit</string>
     <string name="send">Send</string>
-    <string name="add_bill">Tạo hóa đơn</string>
+    <string name="add_sell_bill">Thêm hóa đơn bán</string>
+    <string name="add_buy_bill">Thêm hóa đơn nhập</string>
+    <string name="create_sell_bill">Tạo hóa đơn bán hàng</string>
+    <string name="create_buy_bill">Tạo hóa đơn mua hàng</string>
     <string name="button_ok">Đồng ý</string>
-    <string name="view_bill">Xem hóa đơn</string>
+    <string name="view_sell_bill">Xem hóa đơn bán</string>
+    <string name="list_sell_bill">Danh sách hóa đơn bán hàng</string>
+    <string name="view_buy_bill">Xem hóa đơn mua</string>
+    <string name="list_buy_bill">Danh sách hóa đơn mua hàng</string>
+    
     <string name="statistic">Xem thống kê</string>
     <string name="setting">Thiết lập</string>
     <color name="main_background">#ffffff</color>
     <string name="save">Lưu</string>
     <string name="table_number">Số bàn</string>
+    <string name="data">Dữ liệu</string>
+    <string name="data_backup">Khôi phục dữ liệu</string>
+    <string name="data_save">Sao lưu dữ liệu</string>
+    <string name="data_delete">Xóa sạch dữ liệu</string>
+    <string name="item_manage">Quản lý món ăn</string>
+    <string name="item_add">Thêm món ăn</string>
+    <string name="item_view">Danh sách món ăn</string>
 </resources>

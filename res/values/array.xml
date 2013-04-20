@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listArray">
+        <item >Thêm món ăn</item>
+        <item >Số 2</item>
+    </string-array>
+    <string-array name="listValues">
+        <item >Cha co gi</item>
+        <item >Cung cha co gi</item>
+    </string-array>
+    
+</resources>

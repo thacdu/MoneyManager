@@ -7,31 +7,37 @@ public class ActivitySwipeDetector implements View.OnTouchListener {
 
 	static final String logTag = "ActivitySwipeDetector";
 	private SwipeInterface activity;
-	static final int MIN_DISTANCE = 10;
+	private int position;
+	static final int MIN_DISTANCE = 2;
 	private float downX, downY, upX, upY;
 	
-	public ActivitySwipeDetector(SwipeInterface activity){
+	public ActivitySwipeDetector(SwipeInterface activity, int position){
 	    this.activity = activity;
+	    this.position = position;
 	}
 	
 	public void onRightToLeftSwipe(View view){
 	    //Toast.makeText(activity, "RightToLeftSwipe!", Toast.LENGTH_SHORT).show();
-		activity.right2left(view);
+		activity.right2left(view, position);
 	}
 	
 	public void onLeftToRightSwipe(View view){
 		//Toast.makeText(activity, "LeftToRightSwipe!", Toast.LENGTH_SHORT).show();
-		activity.left2right(view);
+		activity.left2right(view, position);
 	}
 	
 	public void onTopToBottomSwipe(View view){
 		//Toast.makeText(activity, "onTopToBottomSwipe!", Toast.LENGTH_SHORT).show();
-		activity.top2bottom(view);
+		activity.top2bottom(view, position);
 	}
 	
 	public void onBottomToTopSwipe(View view){
 		//Toast.makeText(activity, "onBottomToTopSwipe!", Toast.LENGTH_SHORT).show();
-		activity.bottom2top(view);
+		activity.bottom2top(view, position);
+	}
+	
+	public void touch(View view){
+		activity.touch(view, position);
 	}
 	
 	
@@ -56,7 +62,8 @@ public class ActivitySwipeDetector implements View.OnTouchListener {
 	                if(deltaX > 0) { this.onRightToLeftSwipe(view); return true; }
 	            }
 	            else {
-	            	return false; // We don't consume the event
+	            	touch(view);
+	            	return true; // We don't consume the event
 	            }
 	
 	            // swipe vertical?
@@ -66,7 +73,8 @@ public class ActivitySwipeDetector implements View.OnTouchListener {
 	                if(deltaY > 0) { this.onBottomToTopSwipe(view); return true; }
 	            }
 	            else {
-	            	return false; // We don't consume the event
+	            	touch(view);
+	            	return true; // We don't consume the event
 	            }
 	
 	            return true;

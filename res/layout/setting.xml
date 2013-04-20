@@ -1,8 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/layout"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
- 
-</LinearLayout>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="first_preferencescreen">
+    
+    <PreferenceCategory android:title="@string/item_manage">
+		<Preference
+		    android:title="@string/item_add"
+		    android:key="item_add">
+		</Preference>
+		<Preference
+		    android:title="@string/item_view"
+		    android:key="item_view">
+		</Preference>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/data">
+		<Preference
+		    android:title="@string/data_backup"
+		    android:key="data_backup">
+		</Preference>
+		<Preference
+		    android:title="@string/data_save"
+		    android:key="data_save">
+		</Preference>
+		<Preference
+		    android:title="@string/data_delete"
+		    android:key="data_delete">
+		</Preference>
+    </PreferenceCategory>
+</PreferenceScreen> 

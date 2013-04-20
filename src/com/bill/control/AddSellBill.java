@@ -7,8 +7,6 @@ import java.util.Date;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -25,7 +23,7 @@ import com.markupartist.android.widget.ActionBar.AbstractAction;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
-public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper>{
+public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> implements SwipeInterface{
 	
 	private String[] NAME = 
             new String[] { "Bánh mỳ Bate", "Kem", "Cocacola", "Trà đá"};
@@ -46,23 +44,13 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper>{
 		final ActionBar actionBar = (ActionBar) findViewById(id.actionbar);
 		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_demo));
 		final Action saveAction = new SaveAction();
+		actionBar.setTitle(R.string.list_sell_bill);
         actionBar.addAction(saveAction);
         
         /* List view */
 		listview = (ListView) findViewById(id.listview);
 		adapter = new AddSellBillListViewAdapter(this, NAME, NUMBER, PRICE);
 		listview.setAdapter(adapter);
-		
-		/* List view listener */
-		listview.setOnItemClickListener(new OnItemClickListener()
-        {
-     	   public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-     	   {
-     		   int n = Integer.parseInt(NUMBER[position]);
-     		   NUMBER[position] = String.valueOf(n+1);
-     		   adapter.notifyDataSetChanged();
-     	   }
-        });
 	}
 	
 	/* Save Action Class for Save Action on Action Bar */
@@ -114,6 +102,40 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper>{
 		onBackPressed();
 		ViewSellBillActivity.setObject(bill, item);
 		startActivity(new Intent(this, ViewSellBillActivity.class));
+	}
+
+	@Override
+	public void bottom2top(View view, int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void left2right(View view, int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void right2left(View view, int position) {
+		// TODO Auto-generated method stub
+		int n = Integer.parseInt(NUMBER[position]);
+		NUMBER[position] = String.valueOf(n-1);
+		adapter.notifyDataSetChanged();
+	}
+
+	@Override
+	public void top2bottom(View view, int position) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void touch(View view, int position) {
+		// TODO Auto-generated method stub
+		int n = Integer.parseInt(NUMBER[position]);
+		NUMBER[position] = String.valueOf(n+1);
+		adapter.notifyDataSetChanged();
 	}
 }
 
