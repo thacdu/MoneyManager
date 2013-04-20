@@ -75,7 +75,7 @@ public class ImageAdapter extends BaseAdapter {
 	};
 	
 	private Class[] classlist = {
-			AddSellBill.class, AddSellBill.class,
+			AddSellBill.class, ViewAllSellBillActivity.class,
 			AddSellBill.class, AddSellBill.class,
 			AddSellBill.class, AddSellBill.class
 	};

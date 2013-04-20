@@ -91,9 +91,11 @@ containing a value of this type.
         public static final int activity_main=0x7f030002;
         public static final int add_sell_bill=0x7f030003;
         public static final int grid_item=0x7f030004;
-        public static final int list_bill=0x7f030005;
-        public static final int setting=0x7f030006;
-        public static final int view_sell_bill=0x7f030007;
+        public static final int list_all_bill=0x7f030005;
+        public static final int list_bill=0x7f030006;
+        public static final int setting=0x7f030007;
+        public static final int view_all_sell_bill=0x7f030008;
+        public static final int view_sell_bill=0x7f030009;
     }
     public static final class menu {
         public static final int activity_main=0x7f090000;
