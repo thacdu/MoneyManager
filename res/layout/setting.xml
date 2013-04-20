@@ -20,12 +20,23 @@
 		    android:key="data_backup">
 		</Preference>
 		<Preference
-		    android:title="@string/data_save"
-		    android:key="data_save">
+		    android:title="@string/data_restore"
+		    android:key="data_restore">
 		</Preference>
 		<Preference
 		    android:title="@string/data_delete"
 		    android:key="data_delete">
+		</Preference>
+    </PreferenceCategory>
+    
+    <PreferenceCategory android:title="@string/other">
+		<Preference
+		    android:title="@string/other_alert"
+		    android:key="other_alert">
+		</Preference>
+		<Preference
+		    android:title="@string/other_language"
+		    android:key="other_language">
 		</Preference>
     </PreferenceCategory>
 </PreferenceScreen> 

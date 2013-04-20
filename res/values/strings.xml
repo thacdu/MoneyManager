@@ -22,10 +22,13 @@
     <string name="save">Lưu</string>
     <string name="table_number">Số bàn</string>
     <string name="data">Dữ liệu</string>
-    <string name="data_backup">Khôi phục dữ liệu</string>
-    <string name="data_save">Sao lưu dữ liệu</string>
+    <string name="data_backup">Sao lưu dữ liệu</string>
+    <string name="data_restore">Khôi phục dữ liệu</string>
     <string name="data_delete">Xóa sạch dữ liệu</string>
     <string name="item_manage">Quản lý món ăn</string>
     <string name="item_add">Thêm món ăn</string>
     <string name="item_view">Danh sách món ăn</string>
+    <string name="other">Thiết lập phụ</string>
+    <string name="other_alert">Cảnh báo lỗ</string>
+    <string name="other_language">Ngôn ngữ</string>
 </resources>
