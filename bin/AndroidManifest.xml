@@ -35,6 +35,9 @@
         <activity android:name="com.bill.control.ViewAllSellBillActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
+        <activity android:name="com.bill.control.SettingActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
     </application>
     
 	<uses-permission android:name="android.permission.INTERNET" />
