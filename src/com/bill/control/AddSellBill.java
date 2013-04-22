@@ -7,6 +7,8 @@ import java.util.Date;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -23,7 +25,7 @@ import com.markupartist.android.widget.ActionBar.AbstractAction;
 import com.markupartist.android.widget.ActionBar.Action;
 import com.markupartist.android.widget.ActionBar.IntentAction;
 
-public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> implements SwipeInterface{
+public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 	
 	private String[] NAME = 
             new String[] { "Bánh mỳ Bate", "Kem", "Cocacola", "Trà đá"};
@@ -51,6 +53,19 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> implements 
 		listview = (ListView) findViewById(id.listview);
 		adapter = new AddSellBillListViewAdapter(this, NAME, NUMBER, PRICE);
 		listview.setAdapter(adapter);
+		
+		listview.setOnItemClickListener(new OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
+					long id) {
+				// TODO Auto-generated method stub
+				int n = Integer.parseInt(NUMBER[position]);
+				NUMBER[position] = String.valueOf(n+1);
+				adapter.notifyDataSetChanged();
+			}
+			
+		});
 	}
 	
 	/* Save Action Class for Save Action on Action Bar */
@@ -102,40 +117,6 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> implements 
 		onBackPressed();
 		ViewSellBillActivity.setObject(bill, item);
 		startActivity(new Intent(this, ViewSellBillActivity.class));
-	}
-
-	@Override
-	public void bottom2top(View view, int position) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void left2right(View view, int position) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void right2left(View view, int position) {
-		// TODO Auto-generated method stub
-		int n = Integer.parseInt(NUMBER[position]);
-		NUMBER[position] = String.valueOf(n-1);
-		adapter.notifyDataSetChanged();
-	}
-
-	@Override
-	public void top2bottom(View view, int position) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void touch(View view, int position) {
-		// TODO Auto-generated method stub
-		int n = Integer.parseInt(NUMBER[position]);
-		NUMBER[position] = String.valueOf(n+1);
-		adapter.notifyDataSetChanged();
 	}
 }
 
