@@ -36,8 +36,8 @@ public class Bill {
 		return String.valueOf(tableNumber);
 	}
 	
-	public Date getDate(){
-		return date;
+	public String getDate(){
+		return date.toLocaleString();
 	}
 	
 	public int getID(){

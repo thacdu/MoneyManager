@@ -32,6 +32,9 @@
         <activity android:name="com.bill.control.ViewSellBillActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
+        <activity android:name="com.bill.control.ViewSellBillDetailActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
         <activity android:name="com.bill.control.ViewAllSellBillActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>

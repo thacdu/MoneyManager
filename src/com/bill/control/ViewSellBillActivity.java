@@ -25,7 +25,7 @@ public class ViewSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>{
 		
 		/* Action bar */
 		final ActionBar actionBar = (ActionBar) findViewById(id.actionbar);
-		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_demo));
+		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_default));
         
 		int n = item.size();
 		int billPrice = 0;

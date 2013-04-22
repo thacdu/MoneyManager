@@ -87,22 +87,24 @@ containing a value of this type.
         public static final int actionbar_progress=0x7f0b0007;
         public static final int actionbar_title=0x7f0b0008;
         public static final int cancel=0x7f0b000e;
+        public static final int date=0x7f0b0016;
         public static final int gridview=0x7f0b000b;
         public static final int icon_image=0x7f0b0013;
         public static final int icon_text=0x7f0b0014;
-        public static final int image=0x7f0b0017;
+        public static final int image=0x7f0b0019;
         public static final int listitem=0x7f0b0015;
         public static final int listview=0x7f0b0011;
-        public static final int menu_settings=0x7f0b001b;
+        public static final int menu_settings=0x7f0b001d;
         public static final int name=0x7f0b000c;
-        public static final int number=0x7f0b0018;
+        public static final int number=0x7f0b001a;
         public static final int ok=0x7f0b000f;
         public static final int price=0x7f0b000d;
         public static final int screen=0x7f0b0000;
-        public static final int table=0x7f0b0019;
+        public static final int table=0x7f0b001b;
         public static final int tableNumber=0x7f0b0010;
-        public static final int thumbnail=0x7f0b0016;
-        public static final int total_price=0x7f0b001a;
+        public static final int table_number=0x7f0b0017;
+        public static final int thumbnail=0x7f0b0018;
+        public static final int total_price=0x7f0b001c;
     }
     public static final class layout {
         public static final int actionbar=0x7f030000;

@@ -62,5 +62,9 @@ public class ItemOnBill {
 	public Item getItem(){
 		return item;
 	}
+	
+	public int getNumber(){
+		return number;
+	}
 
 }
