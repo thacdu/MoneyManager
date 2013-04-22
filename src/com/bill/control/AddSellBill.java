@@ -3,6 +3,7 @@ package com.bill.control;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.bill.data.Bill;
 import com.bill.data.DatabaseHelper;
 import com.bill.data.Item;
+import com.bill.data.ItemOnBill;
 import com.example.moneymanager.R;
 import com.example.moneymanager.R.id;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
@@ -27,12 +29,9 @@ import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 	
-	private String[] NAME = 
-            new String[] { "Bánh mỳ Bate", "Kem", "Cocacola", "Trà đá"};
-	private String[] NUMBER = 
-			new String[] {"0", "0", "0", "0"};
-	private String[] PRICE =
-			new String[] {"10000", "8000", "8000", "3000"};
+	private String[] name;
+	private String[] number;
+	private String[] price;
 	
 	AddSellBillListViewAdapter adapter;
 	ListView listview;
@@ -44,14 +43,16 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 		
 		/* Action bar */
 		final ActionBar actionBar = (ActionBar) findViewById(id.actionbar);
-		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_demo));
+		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_default));
 		final Action saveAction = new SaveAction();
-		actionBar.setTitle(R.string.list_sell_bill);
+		actionBar.setTitle(R.string.add_sell_bill);
         actionBar.addAction(saveAction);
+        
+        readData();
         
         /* List view */
 		listview = (ListView) findViewById(id.listview);
-		adapter = new AddSellBillListViewAdapter(this, NAME, NUMBER, PRICE);
+		adapter = new AddSellBillListViewAdapter(this, name, number, price);
 		listview.setAdapter(adapter);
 		
 		listview.setOnItemClickListener(new OnItemClickListener(){
@@ -60,8 +61,8 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long id) {
 				// TODO Auto-generated method stub
-				int n = Integer.parseInt(NUMBER[position]);
-				NUMBER[position] = String.valueOf(n+1);
+				int n = Integer.parseInt(number[position]);
+				number[position] = String.valueOf(n+1);
 				adapter.notifyDataSetChanged();
 			}
 			
@@ -84,11 +85,12 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 	public void saveAction(){
 		int n = listview.getChildCount();
 		Bill bill;
-		ArrayList<Item> item = new ArrayList<Item>();
+		ArrayList<ItemOnBill> itemList = new ArrayList<ItemOnBill>();
 		
 		try{
 			Dao<Bill, Integer> billDao = getHelper().getBillDao();
 			Dao<Item, Integer> itemDao = getHelper().getItemDao();
+			Dao<ItemOnBill, Integer> itemOnBillDao = getHelper().getItemOnBillDao();
 			
 			EditText tableNumber = (EditText) findViewById(id.tableNumber);
 
@@ -105,9 +107,15 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 					String priceString = price.getText().toString().toString();
 					String numberString = number.getText().toString().toString();
 					numberString = numberString.substring(11, numberString.length());
-					Item currentItem = new Item(nameString, priceString, numberString, bill);
-					itemDao.create(currentItem);
-					item.add(currentItem);
+					
+					Item item = itemDao.queryBuilder().where()
+							.eq("name", nameString)
+							.and()
+							.eq("price", Integer.parseInt(priceString)).queryForFirst();
+					
+					ItemOnBill currentItem = new ItemOnBill(item, numberString, bill);
+					itemOnBillDao.create(currentItem);
+					itemList.add(currentItem);
 				}
 			}
 		}catch(SQLException e){
@@ -115,8 +123,30 @@ public class AddSellBill extends OrmLiteBaseActivity<DatabaseHelper> {
 		}
 		
 		onBackPressed();
-		ViewSellBillActivity.setObject(bill, item);
+		ViewSellBillActivity.setObject(bill, itemList);
 		startActivity(new Intent(this, ViewSellBillActivity.class));
+	}
+	
+	private void readData(){
+		try{
+			Dao<Item, Integer> itemDao = getHelper().getItemDao();
+			List<Item> itemList = itemDao.queryForAll();
+			
+			if(itemList.size() > 0){
+				name = new String[itemList.size()];
+				price = new String[itemList.size()];
+				number = new String[itemList.size()];
+				
+				for(int i = 0; i < itemList.size(); i++){
+					name[i] = itemList.get(i).getName();
+					price[i] = itemList.get(i).getPriceString();
+					number[i] = "0";
+				}
+			}
+			
+		}catch(SQLException e){
+			throw new RuntimeException(e);
+		}
 	}
 }
 

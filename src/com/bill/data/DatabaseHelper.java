@@ -23,11 +23,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * Suggested Copy/Paste code. Everything from here to the done block.
 	 ************************************************/
 
-	private static final String DATABASE_NAME = "long.db";
+	private static final String DATABASE_NAME = "money.db";
 	private static final int DATABASE_VERSION = 6;
 
 	private Dao<Bill, Integer> billDao;
 	private Dao<Item, Integer> itemDao;
+	private Dao<ItemOnBill, Integer> itemOnBillDao;
 
 	public DatabaseHelper(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION, R.raw.ormlite_config);
@@ -42,6 +43,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		try {
 			TableUtils.createTable(connectionSource, Bill.class);
 			TableUtils.createTable(connectionSource, Item.class);
+			TableUtils.createTable(connectionSource, ItemOnBill.class);
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Unable to create datbases", e);
 		}
@@ -52,6 +54,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		try {
 			TableUtils.dropTable(connectionSource, Bill.class, true);
 			TableUtils.dropTable(connectionSource, Item.class, true);
+			TableUtils.dropTable(connectionSource, ItemOnBill.class, true);
 			onCreate(sqliteDatabase, connectionSource);
 		} catch (SQLException e) {
 			Log.e(DatabaseHelper.class.getName(), "Unable to upgrade database from version " + oldVer + " to new "
@@ -71,5 +74,12 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 			itemDao = getDao(Item.class);
 		}
 		return itemDao;
+	}
+	
+	public Dao<ItemOnBill, Integer> getItemOnBillDao() throws SQLException {
+		if (itemOnBillDao == null) {
+			itemOnBillDao = getDao(ItemOnBill.class);
+		}
+		return itemOnBillDao;
 	}
 }

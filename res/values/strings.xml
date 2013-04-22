@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MoneyManager</string>
-    <string name="menu_settings">Setting</string>
+    <string name="app_name">Quản lý hóa đơn</string>
+    <string name="menu_settings">Thiết lập</string>
     <string name="hello_world">Hello world!</string>
     <string name="edit">Edit</string>
     <string name="send">Send</string>

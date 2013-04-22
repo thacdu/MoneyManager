@@ -9,7 +9,6 @@ import android.widget.ListView;
 
 import com.bill.data.Bill;
 import com.bill.data.DatabaseHelper;
-import com.bill.data.Item;
 import com.example.moneymanager.R;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
 import com.j256.ormlite.dao.Dao;
@@ -20,7 +19,7 @@ public class ViewAllSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>
 		setContentView(R.layout.view_all_sell_bill);
 		try{
 			Dao<Bill, Integer> billDao = getHelper().getBillDao();
-			Dao<Item, Integer> itemDao = getHelper().getItemDao();
+			//Dao<Item, Integer> itemDao = getHelper().getItemDao();
 			
 			List<Bill> billList = billDao.queryBuilder().orderBy("date", false).query();
 			

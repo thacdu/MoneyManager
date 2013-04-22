@@ -32,14 +32,6 @@ public class Bill {
 		this.date = date;
 	}
 	
-	public void addItem(Item item){
-		item.setBill(this);
-	}
-	
-	public void removeItem(Item item){
-		
-	}
-	
 	public String getTextTableNumber(){
 		return String.valueOf(tableNumber);
 	}

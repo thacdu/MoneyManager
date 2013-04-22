@@ -55,24 +55,27 @@ containing a value of this type.
         public static final int btn_remove=0x7f02000f;
         public static final int btn_restore=0x7f020010;
         public static final int btn_search=0x7f020011;
-        public static final int button_add=0x7f020012;
-        public static final int edittext=0x7f020013;
-        public static final int ic_launcher=0x7f020014;
-        public static final int ic_title_export_default=0x7f020015;
-        public static final int ic_title_home_default=0x7f020016;
-        public static final int ic_title_home_demo=0x7f020017;
-        public static final int ic_title_share_default=0x7f020018;
-        public static final int icon=0x7f020019;
-        public static final int icon_app=0x7f02001a;
-        public static final int item=0x7f02001b;
-        public static final int minus=0x7f02001c;
-        public static final int save=0x7f02001d;
-        public static final int search=0x7f02001e;
-        public static final int setting=0x7f02001f;
-        public static final int statistic=0x7f020020;
+        public static final int btn_setting=0x7f020012;
+        public static final int btn_view=0x7f020013;
+        public static final int button_add=0x7f020014;
+        public static final int edittext=0x7f020015;
+        public static final int ic_launcher=0x7f020016;
+        public static final int ic_title_export_default=0x7f020017;
+        public static final int ic_title_home_default=0x7f020018;
+        public static final int ic_title_home_demo=0x7f020019;
+        public static final int ic_title_share_default=0x7f02001a;
+        public static final int icon=0x7f02001b;
+        public static final int icon_app=0x7f02001c;
+        public static final int icon_app_black=0x7f02001d;
+        public static final int item=0x7f02001e;
+        public static final int minus=0x7f02001f;
+        public static final int save=0x7f020020;
+        public static final int search=0x7f020021;
+        public static final int setting=0x7f020022;
+        public static final int statistic=0x7f020023;
     }
     public static final class id {
-        public static final int GridItem=0x7f0b0010;
+        public static final int GridItem=0x7f0b0012;
         public static final int actionbar=0x7f0b000a;
         public static final int actionbar_actions=0x7f0b0006;
         public static final int actionbar_home=0x7f0b0001;
@@ -83,22 +86,22 @@ containing a value of this type.
         public static final int actionbar_item=0x7f0b0009;
         public static final int actionbar_progress=0x7f0b0007;
         public static final int actionbar_title=0x7f0b0008;
-        public static final int cancel=0x7f0b000c;
+        public static final int cancel=0x7f0b000e;
         public static final int gridview=0x7f0b000b;
-        public static final int icon_image=0x7f0b0011;
-        public static final int icon_text=0x7f0b0012;
-        public static final int image=0x7f0b0015;
-        public static final int listitem=0x7f0b0013;
-        public static final int listview=0x7f0b000f;
+        public static final int icon_image=0x7f0b0013;
+        public static final int icon_text=0x7f0b0014;
+        public static final int image=0x7f0b0017;
+        public static final int listitem=0x7f0b0015;
+        public static final int listview=0x7f0b0011;
         public static final int menu_settings=0x7f0b001b;
-        public static final int name=0x7f0b0016;
-        public static final int number=0x7f0b0017;
-        public static final int ok=0x7f0b000d;
-        public static final int price=0x7f0b0018;
+        public static final int name=0x7f0b000c;
+        public static final int number=0x7f0b0018;
+        public static final int ok=0x7f0b000f;
+        public static final int price=0x7f0b000d;
         public static final int screen=0x7f0b0000;
         public static final int table=0x7f0b0019;
-        public static final int tableNumber=0x7f0b000e;
-        public static final int thumbnail=0x7f0b0014;
+        public static final int tableNumber=0x7f0b0010;
+        public static final int thumbnail=0x7f0b0016;
         public static final int total_price=0x7f0b001a;
     }
     public static final class layout {
@@ -110,9 +113,11 @@ containing a value of this type.
         public static final int grid_item=0x7f030005;
         public static final int list_all_bill=0x7f030006;
         public static final int list_bill=0x7f030007;
-        public static final int setting=0x7f030008;
-        public static final int view_all_sell_bill=0x7f030009;
-        public static final int view_sell_bill=0x7f03000a;
+        public static final int list_item=0x7f030008;
+        public static final int setting=0x7f030009;
+        public static final int view_all_item=0x7f03000a;
+        public static final int view_all_sell_bill=0x7f03000b;
+        public static final int view_sell_bill=0x7f03000c;
     }
     public static final class menu {
         public static final int activity_main=0x7f0a0000;

@@ -36,8 +36,16 @@
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
         <activity android:name="com.bill.control.SettingActivity"
+            android:icon="@drawable/btn_setting"
             android:label="@string/setting"
             android:theme="@android:style/Theme.Holo.Light" >
+        </activity>
+        <activity android:name="com.bill.data.ItemConnection" >       
+        </activity>
+        <activity android:name="com.bill.control.ItemViewActivity" 
+            android:icon="@drawable/icon_app_black"
+            android:label="@string/item_view"
+            android:theme="@android:style/Theme.Holo.Light">       
         </activity>
     </application>
     

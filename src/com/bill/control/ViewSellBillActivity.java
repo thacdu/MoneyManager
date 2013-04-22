@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.bill.data.Bill;
 import com.bill.data.DatabaseHelper;
-import com.bill.data.Item;
+import com.bill.data.ItemOnBill;
 import com.example.moneymanager.R;
 import com.example.moneymanager.R.id;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
@@ -17,7 +17,7 @@ import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class ViewSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>{
 	private static Bill bill;
-	private static ArrayList<Item> item;
+	private static ArrayList<ItemOnBill> item;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -34,9 +34,9 @@ public class ViewSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>{
 		String[] price = new String[n];
 		
 		for(int i = 0; i < n; i++){
-			name[i] = item.get(i).getName();
+			name[i] = item.get(i).getItem().getName();
 			number[i] = item.get(i).getNumberString();
-			price[i] = item.get(i).getPriceString();
+			price[i] = item.get(i).getItem().getPriceString();
 			billPrice += item.get(i).getPriceInBill();
 		}
 		
@@ -51,7 +51,7 @@ public class ViewSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>{
 		listview.setAdapter(adapter);
 	}
 	
-	public static void setObject(Bill newBill, ArrayList<Item> newItem){
+	public static void setObject(Bill newBill, ArrayList<ItemOnBill> newItem){
 		bill = newBill;
 		item = newItem;
 	}
