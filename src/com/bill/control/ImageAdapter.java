@@ -77,6 +77,6 @@ public class ImageAdapter extends BaseAdapter {
 	private Class[] classlist = {
 			AddSellBill.class, ViewAllSellBillActivity.class,
 			AddSellBill.class, AddSellBill.class,
-			AddSellBill.class, SettingActivity.class
+			GraphAChartEngineActivity.class, SettingActivity.class
 	};
 }

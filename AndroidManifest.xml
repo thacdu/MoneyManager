@@ -38,6 +38,10 @@
         <activity android:name="com.bill.control.ViewAllSellBillActivity"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
         </activity>
+        <activity android:name="com.bill.control.GraphAChartEngineActivity"
+            android:theme="@android:style/Theme.Holo.Light.NoActionBar" >
+        </activity>
+        <activity android:name="org.achartengine.GraphicalActivity" />
         <activity android:name="com.bill.control.SettingActivity"
             android:icon="@drawable/btn_setting"
             android:label="@string/setting"
