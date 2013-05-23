@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.moneymanager.R;
+import com.example.moneymanager.R.id;
+import com.markupartist.android.widget.ActionBar;
+import com.markupartist.android.widget.ActionBar.IntentAction;
 
 public class GraphAChartEngineActivity extends Activity {
     /** Called when the activity is first created. */
@@ -14,6 +17,8 @@ public class GraphAChartEngineActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.graph);
+        final ActionBar actionBar = (ActionBar) findViewById(id.actionbar);
+		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_default));
     }
     
     public void lineGraphHandler (View view)
