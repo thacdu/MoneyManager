@@ -43,11 +43,11 @@ public class LineGraph{
 		mRenderer.addSeriesRenderer(renderer2);
 		
 		// Customization time for line 1!
-		renderer.setColor(Color.WHITE);
+		renderer.setColor(Color.BLACK);
 		renderer.setPointStyle(PointStyle.SQUARE);
 		renderer.setFillPoints(true);
 		// Customization time for line 2!
-		renderer2.setColor(Color.YELLOW);
+		renderer2.setColor(Color.RED);
 		renderer2.setPointStyle(PointStyle.DIAMOND);
 		renderer2.setFillPoints(true);
 		

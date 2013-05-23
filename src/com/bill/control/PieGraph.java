@@ -31,6 +31,8 @@ public class PieGraph {
 		renderer.setChartTitle("Pie Chart Demo");
 		renderer.setChartTitleTextSize(7);
 		renderer.setZoomButtonsVisible(true);
+		renderer.setLabelsColor(Color.BLACK);
+		renderer.setLabelsTextSize(15);
 
 		Intent intent = ChartFactory.getPieChartIntent(context, series, renderer, "Pie");
 		return intent;

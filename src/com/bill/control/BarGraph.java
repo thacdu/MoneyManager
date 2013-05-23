@@ -41,12 +41,13 @@ public class BarGraph{
 	    mRenderer.setLabelsColor(Color.RED);
 	    // Customize bar 1
 		XYSeriesRenderer renderer = new XYSeriesRenderer();
+		renderer.setColor(Color.GRAY);
 	    renderer.setDisplayChartValues(true);
 	    renderer.setChartValuesSpacing((float) 0.5);
 	    mRenderer.addSeriesRenderer(renderer);
 	    // Customize bar 2
 	    XYSeriesRenderer renderer2 = new XYSeriesRenderer();
-	    renderer.setColor(Color.CYAN);
+	    renderer.setColor(Color.MAGENTA);
 	    renderer.setDisplayChartValues(true);
 	    renderer.setChartValuesSpacing((float) 0.5);
 	    mRenderer.addSeriesRenderer(renderer2);

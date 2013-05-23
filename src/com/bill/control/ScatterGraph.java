@@ -34,12 +34,12 @@ public class ScatterGraph{
 	 	
 	    // Customization  for data 1
 	    XYSeriesRenderer renderer = new XYSeriesRenderer();
-	    renderer.setColor(Color.WHITE);
+	    renderer.setColor(Color.BLACK); 
 	    renderer.setPointStyle(PointStyle.DIAMOND);
 	    renderer.setLineWidth(6);
 	    // Customization for data 2
 	    XYSeriesRenderer renderer2 = new XYSeriesRenderer();
-	    renderer2.setColor(Color.YELLOW);
+	    renderer2.setColor(Color.RED);
 	    renderer2.setPointStyle(PointStyle.SQUARE);
 	    renderer2.setLineWidth(6);
 	    // Customization
