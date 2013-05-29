@@ -37,9 +37,8 @@ public class GraphAChartEngineActivity extends Activity {
     
     public void pieGraphHandler (View view)
     {
-    	PieGraph pie = new PieGraph();
-    	Intent lineIntent = pie.getIntent(this);
-        startActivity(lineIntent);
+    	Intent intent = new Intent(getBaseContext(), PieGraph.class);
+        startActivity(intent);
     }
     
     public void scatterGraphHandler (View view)

@@ -49,6 +49,8 @@
         </activity>
         <activity android:name="com.bill.data.ItemConnection" >       
         </activity>
+        <activity android:name="com.bill.control.PieGraph" >  
+        </activity>
         <activity android:name="com.bill.control.ItemViewActivity" 
             android:icon="@drawable/icon_app_black"
             android:label="@string/item_view"

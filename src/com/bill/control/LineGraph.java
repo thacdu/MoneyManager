@@ -6,11 +6,15 @@ import org.achartengine.model.TimeSeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 
-public class LineGraph{
+import com.bill.data.DatabaseHelper;
+import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
+
+public class LineGraph extends OrmLiteBaseActivity<DatabaseHelper>{
 
 	public Intent getIntent(Context context) {
 		
@@ -32,6 +36,7 @@ public class LineGraph{
 			series2.add(x2[i], y2[i]);
 		}
 		
+		// Draw graph
 		XYMultipleSeriesDataset dataset = new XYMultipleSeriesDataset();
 		dataset.addSeries(series);
 		dataset.addSeries(series2);
