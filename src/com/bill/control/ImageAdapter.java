@@ -63,7 +63,7 @@ public class ImageAdapter extends BaseAdapter {
 	// references to our images
 	private Integer[] thumbIds = {
 			R.drawable.add_sell_bill, R.drawable.btn_view,
-			R.drawable.add_buy_bill, R.drawable.btn_view,
+			R.drawable.add_buy_bill, R.drawable.btn_view2,
 			R.drawable.statistic, R.drawable.setting
 	};
 	

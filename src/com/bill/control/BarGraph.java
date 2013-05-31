@@ -70,7 +70,7 @@ public class BarGraph extends OrmLiteBaseActivity<DatabaseHelper>{
 		XYSeriesRenderer renderer = new XYSeriesRenderer();
 		renderer.setColor(Color.BLUE);
 	    renderer.setDisplayChartValues(true);
-	    renderer.setChartValuesSpacing((float) 2);
+	    renderer.setChartValuesSpacing((float) 0.5);
 	    mRenderer.addSeriesRenderer(renderer);
 	    
 		Intent intent = ChartFactory.getBarChartIntent(context, dataset,mRenderer, Type.DEFAULT);
