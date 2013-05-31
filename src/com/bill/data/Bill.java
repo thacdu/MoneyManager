@@ -40,6 +40,10 @@ public class Bill {
 		return date.toLocaleString();
 	}
 	
+	public Date getDateOrigin(){
+		return date;
+	}
+	
 	public int getID(){
 		return id;
 	}

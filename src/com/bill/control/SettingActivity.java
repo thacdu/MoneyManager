@@ -22,7 +22,7 @@ public class SettingActivity extends PreferenceActivity{
 	Preference dataBackup;
 	Preference dataDelete;
 	Preference otherAlert;
-	Preference otherLanguage;
+	//Preference otherLanguage;
 	
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -94,7 +94,7 @@ public class SettingActivity extends PreferenceActivity{
 		dataBackup = (Preference) findPreference("data_backup");
 		dataDelete = (Preference) findPreference("data_delete");
 		otherAlert = (Preference) findPreference("other_alert");
-		otherLanguage = (Preference) findPreference("other_language");
+		//otherLanguage = (Preference) findPreference("other_language");
 	}
 	
 	private void setIcon(){
@@ -104,6 +104,6 @@ public class SettingActivity extends PreferenceActivity{
 		dataBackup.setIcon(R.drawable.btn_backup);
 		dataDelete.setIcon(R.drawable.btn_remove);
 		otherAlert.setIcon(R.drawable.btn_alert);
-		otherLanguage.setIcon(R.drawable.btn_language);
+		//otherLanguage.setIcon(R.drawable.btn_language);
 	}
 }

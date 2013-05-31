@@ -34,9 +34,5 @@
 		    android:title="@string/other_alert"
 		    android:key="other_alert">
 		</Preference>
-		<Preference
-		    android:title="@string/other_language"
-		    android:key="other_language">
-		</Preference>
     </PreferenceCategory>
 </PreferenceScreen> 

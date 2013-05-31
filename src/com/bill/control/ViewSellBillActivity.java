@@ -46,6 +46,7 @@ public class ViewSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>{
 		totalPrice.setText("Tổng số tiền: " + billPrice);
 		
         /* List view */
+		
 		ListView listview = (ListView) findViewById(id.listview);
 		AddSellBillListViewAdapter adapter = new AddSellBillListViewAdapter(this, name, number, price);
 		listview.setAdapter(adapter);

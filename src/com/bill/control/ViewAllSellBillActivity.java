@@ -1,7 +1,7 @@
 package com.bill.control;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import android.content.Intent;
@@ -15,7 +15,6 @@ import com.bill.control.adapter.BillViewListAdapter;
 import com.bill.data.Bill;
 import com.bill.data.DatabaseHelper;
 import com.bill.data.Item;
-import com.bill.data.ItemConnection;
 import com.bill.data.ItemOnBill;
 import com.example.moneymanager.R;
 import com.j256.ormlite.android.apptools.OrmLiteBaseActivity;
@@ -36,9 +35,11 @@ public class ViewAllSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>
 				String[] billDateList = new String[n];
 				String[] billPriceList = new String[n];
 				
+				SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm");
+				
 				for(int i = 0; i < n; i++){
 					billTableList[i] = billList.get(i).getTextTableNumber();
-					billDateList[i] = billList.get(i).getDate();
+					billDateList[i] = dt.format(billList.get(i).getDateOrigin());
 					billPriceList[i] = getTotalPrice(billList.get(i));
 				}
 				
@@ -53,7 +54,7 @@ public class ViewAllSellBillActivity extends OrmLiteBaseActivity<DatabaseHelper>
 						Bill bill = billList.get(position);
 						
 						Intent intent = new Intent(getBaseContext(), ViewSellBillDetailActivity.class);
-						intent.putExtra("thacdu", bill.getID());
+						intent.putExtra("id", bill.getID());
 						startActivity(intent);
 					}
 					

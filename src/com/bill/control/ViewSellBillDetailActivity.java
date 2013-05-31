@@ -27,37 +27,31 @@ public class ViewSellBillDetailActivity extends OrmLiteBaseActivity<DatabaseHelp
 		/* Action bar */
 		final ActionBar actionBar = (ActionBar) findViewById(id.actionbar);
 		actionBar.setHomeAction(new IntentAction(this, ActionBarControl.createIntent(this), R.drawable.ic_title_home_default));
-        
-		String s = getIntent().getStringExtra("thacdu");
-		int id = Integer.parseInt(s);
-		/*
+       
+		int id = getIntent().getExtras().getInt("id");
+		
+
 		try{
 			Dao<Bill, Integer> billDao = getHelper().getBillDao();
 			Bill bill = billDao.queryForId(id);
 			
 			Dao<ItemOnBill, Integer> itemOnBillDao = getHelper().getItemOnBillDao();
-			//Dao<Item, Integer> itemDao = getHelper().getItemDao();
-			List<ItemOnBill> item = itemOnBillDao.queryBuilder().where().eq("bill_id", bill).query();
+			Dao<Item, Integer> itemDao = getHelper().getItemDao();
+			List<ItemOnBill> list = itemOnBillDao.queryBuilder().where().eq("bill_id", bill).query();
 			
-			
-			for(int i = 0; i < list.size(); i++){
-				ItemOnBill item = list.get(i);
-				int id = item.getItem().getId();
-				Item temp = itemDao.queryForId(id);
-				price += temp.getPrice() * item.getNumber();
-			}
-			
-			int n = item.size();
+			int n = list.size();
 			int billPrice = 0;
 			String[] name = new String[n];
 			String[] number = new String[n];
 			String[] price = new String[n];
 			
 			for(int i = 0; i < n; i++){
-				name[i] = item.get(i).getItem().getName();
-				number[i] = item.get(i).getNumberString();
-				price[i] = item.get(i).getItem().getPriceString();
-				billPrice += item.get(i).getPriceInBill();
+				int idTemp = list.get(i).getItem().getId();
+				Item iTemp = itemDao.queryForId(idTemp);
+				name[i] = iTemp.getName();
+				number[i] = list.get(i).getNumberString();
+				price[i] = iTemp.getPriceString();
+				billPrice += list.get(i).getNumber() * iTemp.getPrice();
 			}
 			
 			TextView textView = (TextView) findViewById(R.id.table);
@@ -72,6 +66,6 @@ public class ViewSellBillDetailActivity extends OrmLiteBaseActivity<DatabaseHelp
 			
 		}catch(SQLException e){
 			throw new RuntimeException(e);
-		}*/
+		}
 	}
 }

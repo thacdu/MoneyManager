@@ -23,29 +23,20 @@ public class GraphAChartEngineActivity extends Activity {
     
     public void lineGraphHandler (View view)
     {
-    	LineGraph line = new LineGraph();
-    	Intent lineIntent = line.getIntent(this);
-        startActivity(lineIntent);
+    	Intent intent = new Intent(getBaseContext(), LineGraph.class);
+        startActivity(intent);
     }
     
     public void barGraphHandler (View view)
     {
-    	BarGraph bar = new BarGraph();
-    	Intent lineIntent = bar.getIntent(this);
-        startActivity(lineIntent);
+    	Intent intent = new Intent(getBaseContext(), BarGraph.class);
+        startActivity(intent);
     }
     
     public void pieGraphHandler (View view)
     {
     	Intent intent = new Intent(getBaseContext(), PieGraph.class);
         startActivity(intent);
-    }
-    
-    public void scatterGraphHandler (View view)
-    {
-    	ScatterGraph scatter = new ScatterGraph();
-    	Intent lineIntent = scatter.getIntent(this);
-        startActivity(lineIntent);
     }
     
 }
